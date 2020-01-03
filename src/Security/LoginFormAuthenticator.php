@@ -102,6 +102,12 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             $urlRoute = $this->urlGenerator->generate('admin');
             // https://symfony.com/doc/current/controller.html#redirecting
             return new RedirectResponse($urlRoute);
+        } else {
+            // urlGenerator EST FOURNIE PAR LE CONSTRUCTEUR
+            // ET JE M'EN SERS POUR CREER L'URL DE LA ROUTE
+            $urlRoute = $this->urlGenerator->generate('public');
+            // https://symfony.com/doc/current/controller.html#redirecting
+            return new RedirectResponse($urlRoute);
         }
 
         // SINON ON REDIRIGE VERS LA PAGE D'ACCUEIL index
